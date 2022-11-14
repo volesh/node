@@ -1,29 +1,36 @@
+const express = require('express')
 const fs = require('node:fs')
 
-fs.readdir('./Girls', (err, files)=>{
-    for (const file of files) {
-        fs.readFile(`./Girls/${file}`, (err, data)=>{
-            const gender = data.toString().split('-')[1]
-            if(!gender.includes('female')){
-                fs.rename(`./Girls/${file}`, `./Boys/${file}`, ()=>{})
-            }else{
-            }
-        })
-    }
+const db = require('./usersDb.json')
+
+const app = express()
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.get('/users', (req, res)=>{
+
+    res.json(db)
 })
 
 
-fs.readdir('./Boys', (err, files)=>{
-    for (const file of files) {
-        fs.readFile(`./Boys/${file}`, (err, data)=>{
-            let gender = data.toString().split('-')[1]
-            if(gender.includes('female')){
-                fs.rename(`./Boys/${file}`, `./Girls/${file}`, ()=>{})
-            }else{
-            }
-        })
-    }
+app.delete('/users/:userId', (req, res)=>{
+    const userId = req.params.userId
+
+    fs.readFile('./usersDb.json', (err, data)=>{
+        let arr = JSON.parse(data);
+        if (arr[userId]){
+            arr.splice(userId, 1)
+            fs.writeFile('./usersDb.json', JSON.stringify(arr), (err)=>{})
+            res.json('Did')
+        }else {
+            res.json('Problem')
+        }
+    })
+
 })
 
 
-
+app.listen(3001, ()=>{
+    console.log('Hello');
+})

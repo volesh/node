@@ -41,7 +41,9 @@ app.post('/users', (req, res)=>{
         fs.readFile('./usersDb.json', (err, data)=> {
             let arr = JSON.parse(data)
             arr.push(newUser)
-            fs.writeFile('./usersDb.json', JSON.stringify(arr), (err)=>{})
+            fs.writeFile('./usersDb.json', JSON.stringify(arr), (err)=>{
+                // res.json('Something went wrong')
+            })
             res.json('did')
         })
     }else{

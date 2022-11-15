@@ -63,7 +63,7 @@ app.put('/users/:userId', (req, res)=>{
             arr[userId] = newUser
 
             fs.writeFile('./usersDb.json', JSON.stringify(arr), (err)=>{
-                res.status(500).json('Something went wrong')
+                // res.status(500).json('Something went wrong')
             })
 
             res.json('Did')

@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0eb6e86d-5f3a-4460-985e-288845d13f4a" name="Changes" comment="lala">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usersDb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Boys/andriy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Boys/ivan.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Boys/kiril.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Boys/max.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Boys/petya.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Boys/sergiy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Boys/vasyl.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Girls/anna.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Girls/dasha.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Girls/katya.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Girls/sofia.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/node.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDb.json" beforeDir="false" afterPath="$PROJECT_DIR$/userDb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usersDb.json" beforeDir="false" afterPath="$PROJECT_DIR$/usersDb.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,16 +30,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/voles/OneDrive/Робочий стіл/Okten/REACT",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/voles/OneDrive/Робочий стіл/Okten/REACT&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\voles\OneDrive\Робочий стіл\Okten\Node\node" />
@@ -68,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668455981775</updated>
       <workItem from="1668455983088" duration="4108000" />
+      <workItem from="1668516751766" duration="2978000" />
     </task>
     <task id="LOCAL-00001" summary="lala">
       <created>1668460121819</created>
@@ -76,7 +63,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668460121819</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lala">
+      <created>1668516789940</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668516789940</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,11 +15,10 @@ module.exports = {
             next(e)
         }
     },
-    isUserExisted: (req, res, next) => {
+    isUserExisted: async (req, res, next) => {
         try {
             const {userId} = req.params
             const user = userDb.find(user => user.id === +userId)
-
 
             if (userId < 1 || isNaN(+userId)){
                 throw new ApiError(`Invalid user id '${userId}' must be a number > 0`, 400)

@@ -16,7 +16,7 @@ module.exports = {
     updateUser: (req, res, next) => {
         const index = userDb.findIndex(u => u.id === req.params.userId)
         const newUser = {...req.user, ...req.body}
-        userDb[index] = {...userDb[index], ...newUser}
+        userDb[index] = newUser
         res.json(newUser)
     }
 }

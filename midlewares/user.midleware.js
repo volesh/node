@@ -6,8 +6,6 @@ module.exports = {
         try {
             const newUser = req.body
 
-            console.log(newUser);
-
             if (Object.keys(newUser).length !== 2 || newUser.name.length < 2 || typeof newUser.age !== 'number'){
                 throw new ApiError('Invalid request', 400)
             }

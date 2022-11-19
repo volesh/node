@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0eb6e86d-5f3a-4460-985e-288845d13f4a" name="Changes" comment="did again">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/envs.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/users.db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/errors/ApiError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/midlewares/user.midleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/user.router.js" afterDir="false" />
+    <list default="true" id="0eb6e86d-5f3a-4460-985e-288845d13f4a" name="Changes" comment="hw 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/fileService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/usersDb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/users.db.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/users.db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/midlewares/user.midleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/midlewares/user.midleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/user.router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +71,7 @@
       <workItem from="1668516751766" duration="3765000" />
       <workItem from="1668603716799" duration="3640000" />
       <workItem from="1668714959993" duration="12000" />
-      <workItem from="1668842157955" duration="8812000" />
+      <workItem from="1668842157955" duration="12497000" />
     </task>
     <task id="LOCAL-00001" summary="lala">
       <created>1668460121819</created>
@@ -132,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668842170966</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="hw 3">
+      <created>1668854812846</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668854812846</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +149,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lala" />
     <MESSAGE value="did again" />
-    <option name="LAST_COMMIT_MESSAGE" value="did again" />
+    <MESSAGE value="hw 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw 3" />
   </component>
 </project>

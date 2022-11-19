@@ -1,4 +1,4 @@
-module.exports = [
+let usersDb = [
     {
         id: 1,
         name: 'Vasyl',
@@ -50,3 +50,5 @@ module.exports = [
         age: 22
     }
 ]
+
+module.exports = usersDb

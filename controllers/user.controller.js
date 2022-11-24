@@ -1,22 +1,53 @@
-const userDb = require('../dataBase/users.db')
+const userDb = require('../dataBase/User')
 
 module.exports = {
-    getAllUsers: (req, res, next)=>{
-        res.json(userDb)
+    getAllUsers: async (req, res, next)=>{
+        try {
+            const users = await userDb.find()
+
+            res.json(users)
+        }catch (e) {
+            next(e)
+        }
     },
-    getUserById: (req, res, next)=>{
-        res.json(req.user)
+    getUserById: async (req, res, next)=>{
+        const {userId} = req.params
+        try {
+            const user = await userDb.findById(userId)
+            res.json(user)
+        }catch (e) {
+            next(e)
+        }
     },
-    createNewUser: (req, res, next) => {
-        const user = req.body
-        const newId = userDb[userDb.length - 1].id + 1
-        userDb.push({...user, id:newId})
-        res.json({...user, id:newId})
+
+    createNewUser: async (req, res, next) => {
+        try{
+            const newUser = req.body
+            await userDb.create(newUser)
+            res.json('created')
+        }catch (e) {
+            next(e)
+        }
     },
-    updateUser: (req, res, next) => {
-        const index = userDb.findIndex(u => u.id === req.params.userId)
-        const newUser = {...req.user, ...req.body}
-        userDb[index] = newUser
-        res.json(newUser)
+
+    updateUser: async (req, res, next) => {
+        const newUserInfo = req.body
+        const {userId} = req.params
+        try{
+            await userDb.findByIdAndUpdate(userId, newUserInfo)
+            res.json('updated')
+        }catch (e) {
+            next(e)
+        }
+    },
+
+    deleteUserById: async (req, res, next) => {
+        const {userId} = req.params
+        try {
+            await userDb.findByIdAndDelete(userId)
+            res.json('Deleted')
+        }catch (e) {
+            next(e)
+        }
     }
 }

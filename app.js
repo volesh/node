@@ -1,29 +1,26 @@
-const fs = require('node:fs')
+const express = require('express')
+const mongoose = require('mongoose')
+require('dotenv').config()
+const {envsConfig} = require('./src/configs')
+const routers = require('./src/routers')
 
-fs.readdir('./Girls', (err, files)=>{
-    for (const file of files) {
-        fs.readFile(`./Girls/${file}`, (err, data)=>{
-            const gender = data.toString().split('-')[1]
-            if(!gender.includes('female')){
-                fs.rename(`./Girls/${file}`, `./Boys/${file}`, ()=>{})
-            }else{
-            }
-        })
-    }
+const app = express()
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.use('/users', routers.userRouter)
+app.use('/auth', routers.authRouter)
+
+app.use((err, req, res, next)=>{
+    res.status(err.statusCode || 500)
+            .json({
+                message:err.message || 'Unknown error',
+                statusCode: err.statusCode || 500
+            })
 })
 
 
-fs.readdir('./Boys', (err, files)=>{
-    for (const file of files) {
-        fs.readFile(`./Boys/${file}`, (err, data)=>{
-            let gender = data.toString().split('-')[1]
-            if(gender.includes('female')){
-                fs.rename(`./Boys/${file}`, `./Girls/${file}`, ()=>{})
-            }else{
-            }
-        })
-    }
+app.listen(envsConfig.PORT, async ()=>{
+    await mongoose.connect(envsConfig.MONGO_SERVER)
 })
-
-
-

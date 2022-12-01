@@ -11,6 +11,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use('/users', routers.userRouter)
 app.use('/auth', routers.authRouter)
+app.use('/cars', routers.carRouter)
 
 app.use((err, req, res, next)=>{
     res.status(err.statusCode || 500)
@@ -19,7 +20,6 @@ app.use((err, req, res, next)=>{
                 statusCode: err.statusCode || 500
             })
 })
-
 
 app.listen(envsConfig.PORT, async ()=>{
     await mongoose.connect(envsConfig.MONGO_SERVER)

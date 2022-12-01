@@ -1,4 +1,5 @@
 const {Schema, model} = require('mongoose')
+const {defaults} = require("joi");
 
 const userSchema = new Schema({
     name:{type:String, minLength:2, maxLength:50},

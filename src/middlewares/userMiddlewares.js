@@ -22,9 +22,22 @@ module.exports = {
 
     isUserExist: async (req, res, next) => {
         try {
-
-            const user = await userDb.findById(req.params.userId)
-
+            const _id = req.params.userId
+            const user = await userDb.aggregate([
+                {
+                    $match:{
+                        email: 'igor1@gmail.com'
+                    }
+                },
+                {
+                    $lookup:{
+                        from:'Car',
+                        localField:'_id',
+                        foreignField:'_user_id',
+                        as:'cars'
+                    }
+                }
+            ])
             if(!user){
                 throw new ApiError('User not Found', 404)
             }

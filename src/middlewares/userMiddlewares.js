@@ -26,7 +26,7 @@ module.exports = {
             const user = await userDb.aggregate([
                 {
                     $match:{
-                        email: 'igor1@gmail.com'
+                        _id
                     }
                 },
                 {

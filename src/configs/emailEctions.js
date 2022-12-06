@@ -1,4 +1,4 @@
 module.exports = {
     LOGIN: 'login',
-    LALA: 'lala'
+    LALA: 'lalala'
 }

@@ -1,29 +1,27 @@
-const fs = require('node:fs')
+const express = require('express')
+const mongoose = require('mongoose')
+require('dotenv').config()
+const { envsConfig } = require("./src/configs");
+const apiRouter = require('./src/routers/apiRouter')
+const {cronRunner} = require("./src/crones");
 
-fs.readdir('./Girls', (err, files)=>{
-    for (const file of files) {
-        fs.readFile(`./Girls/${file}`, (err, data)=>{
-            const gender = data.toString().split('-')[1]
-            if(!gender.includes('female')){
-                fs.rename(`./Girls/${file}`, `./Boys/${file}`, ()=>{})
-            }else{
-            }
-        })
-    }
+mongoose.set({strictQuery: false})
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
+
+app.use(apiRouter)
+
+//Опрацювання помилок
+app.use((err, req, res, next) => {
+    res.status(err.status || 500).json({
+        errorMessage: err.message || 'Unknown error',
+        statusCode: err.status || 500
+    })
 })
 
-
-fs.readdir('./Boys', (err, files)=>{
-    for (const file of files) {
-        fs.readFile(`./Boys/${file}`, (err, data)=>{
-            let gender = data.toString().split('-')[1]
-            if(gender.includes('female')){
-                fs.rename(`./Boys/${file}`, `./Girls/${file}`, ()=>{})
-            }else{
-            }
-        })
-    }
+app.listen(envsConfig.PORT, async ()=>{
+    await mongoose.connect(envsConfig.MONGO_SERVER)
+    console.log('working')
+    cronRunner()
 })
-
-
-

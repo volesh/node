@@ -1,6 +1,7 @@
-const {authService, emailService, userService} = require("../services");
+const {authService, emailService, userService, smsService} = require("../services");
 const {apiError} = require("../errors");
-const {emailActionsConfig, envsConfig, tokensTypeConfig} = require("../configs");
+const {emailActionsConfig, envsConfig, tokensTypeConfig, smsActionsConfig} = require("../configs");
+
 
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
             const tokenPair = await authService.createTokensPair({...tokens, _user_id: _id})
 
             await emailService.sendEmail('volesh2@gmail.com', emailActionsConfig.LOGIN)
+            await smsService.sendSms(smsActionsConfig.HELLO, '+380682443742')
 
             res.json(tokenPair)
         }catch (e) {

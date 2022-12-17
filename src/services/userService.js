@@ -1,4 +1,4 @@
-const {UserDb} = require("../dataBases");
+const UserDb = require("../dataBases/User");
 module.exports = {
     getAll: async () => {
         return UserDb.find()

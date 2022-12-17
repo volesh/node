@@ -1,6 +1,6 @@
-const {userService, emailService} = require("../services");
-const {hashPassword} = require("../services/authService");
+const {userService, emailService, authService} = require("../services");
 const {emailActionsConfig} = require("../configs");
+const {UserDb} = require("../dataBases");
 
 module.exports = {
     getAll: async (req, res, next) => {
@@ -25,9 +25,9 @@ module.exports = {
 
     createUser: async (req, res, next) => {
         try{
-            const userInfo = req.body
-            const hashedPassword = await hashPassword(userInfo.password)
-            const user = await userService.createUser({...userInfo, password:hashedPassword})
+            const user = await UserDb.createWithHashPass(req.body)
+            // const hashedPass = await authService.hashPassword(req.body.password)
+            // const user = await userService.createUser({...req.body, password: hashedPass})
 
             res.json(user)
         }catch (e) {
